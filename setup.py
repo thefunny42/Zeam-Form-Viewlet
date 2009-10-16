@@ -25,5 +25,7 @@ setup(name='zeam.form.viewlet',
       install_requires=[
         'setuptools',
         'zeam.form.base',
+        'grokcore.viewlet',
+        'megrok.pagetemplate',
         ],
       )

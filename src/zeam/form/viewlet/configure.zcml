@@ -1,0 +1,10 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:grok="http://namespaces.zope.org/grok">
+
+  <include package="zeam.form.base" />
+  <include package="grokcore.viewlet" />
+
+  <!-- Grok template -->
+  <grok:grok package=".form" />
+
+</configure>
