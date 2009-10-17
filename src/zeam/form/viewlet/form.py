@@ -10,12 +10,11 @@ pt.templatedir('default_templates')
 class ViewletForm(grok.Viewlet, FormCanvas):
     """A form as a viewlet.
     """
-
     grok.baseclass()
 
-    def __init__(self, context, request, view):
-        grok.Viewlet(self, context, request, view)
-        FormCanvas(self, context, request)
+    def __init__(self, context, request, view, manager):
+        grok.Viewlet.__init__(self, context, request, view, manager)
+        FormCanvas.__init__(self, context, request)
 
     def update(self):
         self.updateActions()
