@@ -1,4 +1,3 @@
-
 from zeam.form.base.form import FormCanvas
 
 from megrok import pagetemplate as pt
@@ -16,6 +15,11 @@ class ViewletForm(grok.Viewlet, FormCanvas):
         grok.Viewlet.__init__(self, context, request, view, manager)
         FormCanvas.__init__(self, context, request)
 
+    def update(self):
+        grok.Viewlet.update(self)
+        FormCanvas.update(self)
+        self.updateForm()
+
     def updateForm(self):
         self.updateActions()
         self.updateWidgets()
@@ -24,7 +28,6 @@ class ViewletForm(grok.Viewlet, FormCanvas):
         return FormCanvas.render(self)
 
     render.base_method = True
-
 
 
 class ViewletFormTemplate(pt.PageTemplate):
