@@ -16,7 +16,7 @@ class ViewletForm(grok.Viewlet, FormCanvas):
         grok.Viewlet.__init__(self, context, request, view, manager)
         FormCanvas.__init__(self, context, request)
 
-    def update(self):
+    def updateForm(self):
         self.updateActions()
         self.updateWidgets()
 
