@@ -3,7 +3,7 @@ zeam.form.viewlet
 =================
 
 ``zeam.form.viewlet`` provide you with a `Zeam
-Form<http://pypi.python.org/pypi/zeam.form.base>`_ in a viewlet.
+Form <http://pypi.python.org/pypi/zeam.form.base>`_ in a viewlet.
 
 Example
 =======
