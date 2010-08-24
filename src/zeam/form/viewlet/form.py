@@ -10,6 +10,7 @@ class ViewletForm(grok.Viewlet, FormCanvas):
     """A form as a viewlet.
     """
     grok.baseclass()
+    i18nLanguage = None
 
     def __init__(self, context, request, view, manager):
         grok.Viewlet.__init__(self, context, request, view, manager)
@@ -19,6 +20,12 @@ class ViewletForm(grok.Viewlet, FormCanvas):
         grok.Viewlet.update(self)
         FormCanvas.update(self)
         self.updateForm()
+
+    def default_namespace(self):
+        namespace = super(ViewletForm, self).default_namespace()
+        if self.i18nLanguage is not None:
+            namespace['target_language'] = self.i18nLanguage
+        return namespace
 
     def updateForm(self):
         self.updateActions()
