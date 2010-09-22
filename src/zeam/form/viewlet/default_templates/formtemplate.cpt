@@ -1,30 +1,30 @@
 <form action="#" tal:attributes="action request.URL" method="post"
       enctype="multipart/form-data">
 
-  <h2 tal:condition="viewlet.label"
-      tal:content="viewlet.label">Label</h2>
+  <h2 tal:condition="form.label"
+      tal:content="form.label">Label</h2>
 
-  <p tal:condition="viewlet.description"
-     tal:content="viewlet.description">Description</p>
+  <p tal:condition="form.description"
+     tal:content="form.description">Description</p>
 
   <p class="form-status"
-     tal:condition="viewlet.status"
-     tal:content="viewlet.status">Status</p>
+     tal:condition="form.status"
+     tal:content="form.status">Status</p>
 
   <div class="form-error"
-       tal:condition="viewlet.errors">
+       tal:condition="form.errors">
     <span i18n:translate="text_errors">
       There were errors:</span>
 
     <ul tal:condition="form.formErrors"
-        tal:repeat="error viewlet.formErrors">
+        tal:repeat="error form.formErrors">
       <li> <span tal:replace="error.title" /> </li>
     </ul>
   </div>
 
   <div class="fields"
-       tal:condition="viewlet.fieldWidgets">
-    <div class="field" tal:repeat="widget viewlet.fieldWidgets">
+       tal:condition="form.fieldWidgets">
+    <div class="field" tal:repeat="widget form.fieldWidgets">
       <label class="field-label" for="#"
              tal:attributes="for widget.htmlId()"
              tal:content="widget.title">
@@ -51,8 +51,8 @@
   </div>
 
   <div class="actions"
-       tal:condition="viewlet.actionWidgets">
-    <div class="action" tal:repeat="widget viewlet.actionWidgets">
+       tal:condition="form.actionWidgets">
+    <div class="action" tal:repeat="widget form.actionWidgets">
       <tal:widget tal:content="structure widget.render()" />
     </div>
   </div>
