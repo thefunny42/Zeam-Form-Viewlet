@@ -1,8 +1,8 @@
 <form action="#" tal:attributes="action request.URL" method="post"
       enctype="multipart/form-data">
 
-  <h2 tal:condition="form.label"
-      tal:content="form.label">Label</h2>
+  <h3 tal:condition="form.label"
+      tal:content="form.label">Label</h3>
 
   <p tal:condition="form.description"
      tal:content="form.description">Description</p>
