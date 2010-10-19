@@ -1,7 +1,16 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0'
+version = '1.1dev'
+
+tests_require = [
+    'zope.app.authentication',
+    'zope.app.testing',
+    'zope.app.zcmlfiles',
+    'zope.configuration',
+    'zope.securitypolicy',
+    'zope.testbrowser',
+    ]
 
 setup(name='zeam.form.viewlet',
       version=version,
@@ -28,4 +37,6 @@ setup(name='zeam.form.viewlet',
         'grokcore.viewlet',
         'megrok.pagetemplate',
         ],
+      tests_require = tests_require,
+      extras_require = {'test': tests_require},
       )

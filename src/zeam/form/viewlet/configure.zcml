@@ -2,6 +2,7 @@
            xmlns:grok="http://namespaces.zope.org/grok">
 
   <include package="zeam.form.base" />
+  <include package="grokcore.viewlet" file="meta.zcml" />
   <include package="grokcore.viewlet" />
 
   <!-- Grok template -->

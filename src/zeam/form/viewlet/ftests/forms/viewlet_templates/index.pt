@@ -1,0 +1,3 @@
+<div>
+  <p tal:replace="structure provider:manager" />
+</div>

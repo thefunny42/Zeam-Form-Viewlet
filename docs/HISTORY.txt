@@ -1,8 +1,17 @@
 Changelog
 =========
 
+1.1 (unreleased)
+----------------
+
+* Add a ViewletManagerForm.
+
+* Add tests.
+
+* Update form templates to be compatible with last version of
+  ``zeam.form.base``.
+
 1.0 (2010/07/16)
 ----------------
 
 * Initial release.
-
