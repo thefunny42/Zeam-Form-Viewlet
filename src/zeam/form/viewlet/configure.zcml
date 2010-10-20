@@ -5,7 +5,11 @@
   <include package="grokcore.viewlet" file="meta.zcml" />
   <include package="grokcore.viewlet" />
 
+  <include package="megrok.chameleon" />
+  <include package="megrok.pagetemplate" file="meta.zcml" />
+
   <!-- Grok template -->
+  <grok:grok package=".meta" />
   <grok:grok package=".form" />
 
 </configure>

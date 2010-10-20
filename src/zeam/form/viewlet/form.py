@@ -12,6 +12,7 @@ class ViewletManagerForm(grok.ViewletManager, FormCanvas):
     grok.baseclass()
     grok.implements(IInlineForm)
     i18nLanguage = None
+    prefix = None
 
     def __init__(self, context, request, view):
         grok.ViewletManager.__init__(self, context, request, view)

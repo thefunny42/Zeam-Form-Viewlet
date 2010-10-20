@@ -1,18 +1,18 @@
 """
 
-We define a viewlet form here.
+We define a viewlet manager form here.
 
 Let's grok our example:
 
   >>> from zeam.form.viewlet.testing import grok
-  >>> grok('zeam.form.viewlet.ftests.forms.viewlet')
+  >>> grok('zeam.form.viewlet.ftests.forms.viewletmanager')
 
 Let's render the view that use our viewlet now:
 
   >>> from zope.publisher.browser import TestRequest
   >>> request = TestRequest()
 
-  >>> from zeam.form.viewlet.ftests.forms.viewlet import Context
+  >>> from zeam.form.viewlet.ftests.forms.viewletmanager import Context
   >>> context = Context()
 
 Integration tests
@@ -39,18 +39,18 @@ information, and we should get an error:
       <h3>Subscription corner</h3>
       <div class="fields">
         <div class="field">
-          <label class="field-label" for="form-field-name">Name</label>
+          <label class="field-label" for="registration-field-name">Name</label>
           <br />
-          <input type="text" id="form-field-name" name="form.field.name" class="field" value="" />
+          <input type="text" id="registration-field-name" name="registration.field.name" class="field" value="" />
         </div> <div class="field">
-          <label class="field-label" for="form-field-email">Email</label>
+          <label class="field-label" for="registration-field-email">Email</label>
           <br />
-          <input type="text" id="form-field-email" name="form.field.email" class="field" value="" />
+          <input type="text" id="registration-field-email" name="registration.field.email" class="field" value="" />
         </div>
       </div>
       <div class="actions">
         <div class="action">
-          <input type="submit" id="form-action-subscribe" name="form.action.subscribe" value="Subscribe" class="action" />
+          <input type="submit" id="registration-action-subscribe" name="registration.action.subscribe" value="Subscribe" class="action" />
         </div>
       </div>
     </form>
@@ -78,16 +78,9 @@ class Index(grok.View):
     grok.context(Context)
 
 
-class Manager(grok.ViewletManager):
+class Registration(zeam.ViewletManagerForm):
     grok.context(Context)
     grok.view(Index)
-    grok.name('manager')
-
-
-class Form(zeam.ViewletForm):
-    grok.context(Context)
-    grok.view(Index)
-    grok.viewletmanager(Manager)
 
     label = 'Subscription corner'
     fields = zeam.Fields(zeam.Field('Name'), zeam.Field('Email'))
