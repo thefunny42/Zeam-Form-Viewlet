@@ -55,7 +55,13 @@ information, and we should get an error:
     </form>
   </div>
 
-
+  >>> 'Registration done' not in browser.contents
+  True
+  >>> browser.getControl('Name').value = "Sylvain"
+  >>> browser.getControl('Email').value = "sylvain at example dot com"
+  >>> browser.getControl('Subscribe').click()
+  >>> 'Registration done' in browser.contents
+  True
 
 """
 
@@ -87,4 +93,5 @@ class Form(zeam.ViewletForm):
 
     @zeam.action("Subscribe")
     def subscribe(self):
-        pass
+        self.status = "Registration done"
+        return zeam.SUCCESS
