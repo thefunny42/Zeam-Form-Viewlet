@@ -4,14 +4,9 @@ import os
 version = '1.2dev'
 
 tests_require = [
-    'zope.app.authentication',
-    'zope.app.testing',
-    'zope.app.zcmlfiles',
-    'zope.configuration',
-    'zope.publisher',
-    'zope.securitypolicy',
-    'zope.testbrowser',
+    'zope.app.wsgi',
     'zope.testing',
+    'zeam.form.base [test]',
     ]
 
 setup(name='zeam.form.viewlet',

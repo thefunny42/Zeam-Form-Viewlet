@@ -1,13 +1,12 @@
 import unittest
 from pkg_resources import resource_listdir
 from zope.testing import doctest
-from zope.app.testing.functional import getRootFolder
-from zeam.form.viewlet.testing import FunctionalLayer, setUp, tearDown, checker
+from zeam.form.viewlet.testing import FunctionalLayer
 
 
 def suiteFromPackage(name):
     optionflags = doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
-    globs = {'getRootFolder': getRootFolder}
+    globs = {'getRootFolder': FunctionalLayer.getRootFolder}
     files = resource_listdir(__name__, name)
     suite = unittest.TestSuite()
     for filename in files:
@@ -20,10 +19,7 @@ def suiteFromPackage(name):
 
         dottedname = 'zeam.form.viewlet.ftests.%s.%s' % (name, filename[:-3])
         test = doctest.DocTestSuite(dottedname,
-                                    setUp=setUp,
-                                    tearDown=tearDown,
                                     extraglobs=globs,
-                                    checker=checker,
                                     optionflags=optionflags)
         test.layer = FunctionalLayer
         suite.addTest(test)
