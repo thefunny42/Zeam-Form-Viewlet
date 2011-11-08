@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2dev'
+version = '1.2'
 
 tests_require = [
     'zope.app.wsgi',
@@ -32,6 +32,7 @@ setup(name='zeam.form.viewlet',
         'grokcore.component',
         'grokcore.view',
         'grokcore.viewlet',
+        'megrok.chameleon',
         'martian',
         'megrok.pagetemplate',
         'setuptools',
