@@ -4,8 +4,8 @@
   <include package="zeam.form.base" />
   <include package="grokcore.viewlet" file="meta.zcml" />
   <include package="grokcore.viewlet" />
+  <include package="grokcore.chameleon" />
 
-  <include package="megrok.chameleon" />
   <include package="megrok.pagetemplate" file="meta.zcml" />
 
   <!-- Grok template -->
