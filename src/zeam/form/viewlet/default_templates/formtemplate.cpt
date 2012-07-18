@@ -1,4 +1,7 @@
-<form action="#" tal:attributes="action request.URL" method="post"
+<form action="#" tal:attributes="action request.URL;
+                                 name form.prefix or None;
+                                 id form.prefix or None"
+      method="post"
       enctype="multipart/form-data"
       i18n:domain="zeam.form.base">
 
